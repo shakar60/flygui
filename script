@@ -5,8 +5,8 @@ gui.Parent = game.Players.LocalPlayer.PlayerGui
 
 -- Create the main frame
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 200, 0, 225) -- Increased height by 0.5 units
-mainFrame.Position = UDim2.new(0.5, -100, 0.5, -112.25) -- Adjusted position
+mainFrame.Size = UDim2.new(0, 200, 0, 225.2) -- Increased height by 0.1 units
+mainFrame.Position = UDim2.new(0.5, -100, 0.5, -112.6) -- Adjusted position
 mainFrame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 mainFrame.BorderSizePixel = 0
 mainFrame.Active = true
@@ -58,24 +58,10 @@ for _, name in ipairs(orderedScripts) do
         print("Script Executed: "..name)
     end)
 
-    yOffset = yOffset + 50  -- Increase vertical offset for the next button
+    yOffset = yOffset + 50  -- Increase vertical offset for next button
 end
--- Create the ScreenGui
-local gui = Instance.new("ScreenGui")
-gui.Name = "HitboxExpander"
-gui.Parent = game.Players.LocalPlayer.PlayerGui
 
--- Create the main frame
-local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 200, 0, 180)  -- Adjusted height to 0.5 taller
-mainFrame.Position = UDim2.new(0.5, -100, 0.5, -90)  -- Adjusted position
-mainFrame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-mainFrame.BorderSizePixel = 0
-mainFrame.Active = true
-mainFrame.Draggable = true
-mainFrame.Parent = gui
-
--- Create the close button
+-- Create close button
 local closeButton = Instance.new("TextButton")
 closeButton.Name = "CloseButton"
 closeButton.Size = UDim2.new(0, 20, 0, 20)
@@ -86,10 +72,8 @@ closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeButton.Text = "X"
 closeButton.Font = Enum.Font.SourceSans
 closeButton.TextSize = 14
-closeButton.Parent = mainFrame
+closeButton.Parent = titleLabel
 
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
 end)
-
--- Add your previous code here (the code for adding buttons for different scripts)
